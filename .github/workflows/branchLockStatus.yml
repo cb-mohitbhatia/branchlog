@@ -20,5 +20,5 @@ jobs:
         
       - name: Get branch name
         id: branch_name
-        run: echo github.event.pull_request.user.login
+        run: echo -e github.event.pull_request.user.login
 
