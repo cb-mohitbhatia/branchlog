@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Allow sync PRs to merge.
-        if: ${{ github.event.pull_request.user.login }} == 'distributed-gitflow-app[bot]'
+        if: ${{ github.event.pull_request.user.login == 'distributed-gitflow-app[bot]' }}
         run: |
           echo "Distributed GitFlow Bot PR. Workflow will pass."
           exit 0
