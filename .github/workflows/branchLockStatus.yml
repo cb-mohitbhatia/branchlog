@@ -4,14 +4,11 @@ on:
   pull_request:
     branches:
       - 'develop/subscriptions'
-      - 'develop/invoices'
-      - 'develop/taxes'
-      - 'develop/testbranch'
     types: [opened,edited,reopened,synchronize,labeled,unlabeled]
 
 jobs:
   check:
-    runs-on: cicd-medium-runner
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
@@ -21,6 +18,4 @@ jobs:
         if: ${{ github.event.pull_request.user.login }} == 'distributed-gitflow-app[bot]'
         run: |
           echo "Distributed GitFlow Bot PR. Workflow will pass."
-	  echo "github.event.pull_request.user.login"
           exit 0
-
