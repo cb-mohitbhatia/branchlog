@@ -11,7 +11,7 @@ on:
 
 jobs:
   check:
-    runs-on: cicd-medium-runner
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
