@@ -12,8 +12,13 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    if: ${{ github.event.pull_request.user.login }} != 'cb-mohitbhatia'
+    if: ${{ github.event.pull_request.user.login != 'cb-mohitbhatia' }}
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Get branch name
+        id: branch_name
+        run: echo "This PR is opened by ${{ github.event.pull_request.user.login }} ."
+
