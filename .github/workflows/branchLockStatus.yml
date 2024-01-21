@@ -12,13 +12,8 @@ jobs:
     permissions:
       id-token: write
       contents: read
-
+    if: ${{ github.event.pull_request.user.login != 'cb-mohitbhatia' }}
+    
     steps:
-      - name: Allow sync PRs to merge.
-        if: ${{ github.event.pull_request.user.login == 'cb-mohitbhatia' }}
-        run: |
-          echo "Distributed GitFlow Bot PR. Workflow will pass."
-          exit 0
-
       - name: Checkout code
         uses: actions/checkout@v2
