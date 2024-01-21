@@ -4,9 +4,6 @@ on:
   pull_request:
     branches:
       - 'develop/subscriptions'
-      - 'develop/invoices'
-      - 'develop/taxes'
-      - 'develop/testbranch'
     types: [opened,edited,reopened,synchronize,labeled,unlabeled]
 
 jobs:
