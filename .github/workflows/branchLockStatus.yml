@@ -12,7 +12,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    if: ${{ github.event.pull_request.user.login }} == 'cb-mohitbhatia' }}
+    if: ${{ github.event.pull_request.user.login }} == cb-mohitbhatia
     
     steps:
       - name: Checkout code
